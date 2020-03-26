@@ -51,9 +51,13 @@ int main (){
     //Ejercicio 7 (2-3)
 	void recorrerMatrizDosTresAscendente(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			for (int j = i; j < N; j++){
-				printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i >= 0){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
@@ -62,9 +66,13 @@ int main (){
 	//Ejercicio 8 (3-2)
 	void recorrerMatrizDosTresDescendente(int arr[][N]) {
 		for(int i = N-1; i >= 0; i--) {
-			for (int j = i; j < N; j++){
-				printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i >= 0){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
