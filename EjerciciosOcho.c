@@ -49,22 +49,30 @@ int main (){
 	}
 
     //Ejercicio 15 (4)
-	void recorrerMatriz4Ascendente((int arr[][N]) {
+	void recorrerMatriz4Ascendente(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			for (int j = (N-1-i); j <= i; j++){
-					printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i <= 0 && i+j >= N-1 ){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
 	}
 	
 	//Ejercicio 16 (4)
-	void recorrerMatriz4Descendente((int arr[][N]) {
+	void recorrerMatriz4Descendente(int arr[][N]) {
 		for(int i = N-1; i >= 0; i--) {
-			for (int j = (N-1-i); j <= i; j++){
-					printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i <= 0 && i+j >= N-1 ){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
