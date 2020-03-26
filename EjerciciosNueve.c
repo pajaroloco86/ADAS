@@ -49,9 +49,16 @@ int main (){
 	}
 
     //Ejercicio 17
-	void recorrerDiagonalPrincipal((int arr[][N]) {
+	void recorrerDiagonalPrincipal(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			printf("%d ", arr[i][i]);
+			for(int j = 0; j < N; j++){
+				if(j-i == 0){
+					printf("%d", arr[i][i]);
+				} else {
+					printf(" ");
+				}
+			}
+			printf("\n");
 		}
 		printf("\n");
 	}
@@ -59,11 +66,13 @@ int main (){
 	//Ejercicio 18
 	void recorrerDiagonalInvertida(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			for (int j= 0; j < N; j++){
-				if(i+j== N-1){
-					printf("%d ", arr[i][j]);
+			for(int j = 0; j < N; j++){
+				if(i+j == N-1){
+					printf("%d", arr[i][i]);
+				} else {
+					printf(" ");
 				}
 			}
+			printf("\n");
 		}
-		printf("\n");
 	}
