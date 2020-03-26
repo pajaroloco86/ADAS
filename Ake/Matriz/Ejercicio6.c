@@ -33,19 +33,11 @@ void llenadoArreglo(int arre[][N]){
 void imprimirArreglo(int arre[][N]){
     int j=0;
   for(int i =0; i<N; i++){
-        while(i+j < (N-1)){
-            printf("        ");
-            j++;
-        }
-        while((i+j >= (N-1)) && j<N){
-            if(j>i){
-                printf("%d,%d: %d ",i,j, arre[i][j]);
-            }else{
-                printf("        ");
+        for(int j=0; j<N; j++){
+          if((j>=i) && (i+j >= (N-1))) {
+              printf("%d,%d:%d ",i,j, arre[i][j]);
             }
-           j++;
-        }
+          }
         printf("\n");
-        j=0;
     }
 }
