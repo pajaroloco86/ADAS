@@ -51,9 +51,13 @@ int main (){
     //Ejercicio 5 (1-4)
 	void recorrerMatrizUnoCuatroAscendente(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			for (int j = 0; j <= i; j++){
-				printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i <= 0){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
@@ -62,9 +66,13 @@ int main (){
 	//Ejercicio 6 (4-1)
 	void recorrerMatrizUnoCuatroDescendente(int arr[][N]) {
 		for(int i = N-1; i >= 0; i--) {
-			for (int j = 0; j <= i; j++){
-				printf("%d ", arr[i][j]);
-			} 
+			for (int j = 0; j < N; j++){
+				if(j-i <= 0){
+					printf("%d", arr[i][j]);
+				} else {
+					printf(" ");
+				}
+			}
 			printf("\n");
 		}
 		printf("\n");
