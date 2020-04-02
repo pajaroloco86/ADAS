@@ -1,5 +1,5 @@
 //Diego De Gante Pérez
-//Imprime sectores 1 ascedente y descendente
+//Imprime sectore 3 ascedente y descendente
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,8 +7,8 @@
 
 void asignarArreglo(int arr[][N]);
 void imprimirArreglo(int arr[][N]);
-void recorrerMatriz1Ascendente(int arr[][N]);
-void recorrerMatriz1Descendente(int arr[][N]);
+void recorrerMatriz3Ascendente(int arr[][N]);
+void recorrerMatriz3Descendente(int arr[][N]);
 
 
 int main (){
@@ -21,8 +21,8 @@ int main (){
 	
 	asignarArreglo(arreglo);
 	imprimirArreglo(arreglo);
-	recorrerMatriz1Ascendente(arreglo);
-	recorrerMatriz1Descendente(arreglo);
+    recorrerMatriz3Ascendente(arreglo);
+	recorrerMatriz3Descendente(arreglo);
 	
 	
 	return 0;
@@ -48,22 +48,26 @@ int main (){
 		printf("\n");
 	}
 
-    //Ejercicio 9 (1)
-	void recorrerMatriz1Ascendente((int arr[][N]) {
+    //Ejercicio 13 (3)
+	void recorrerMatriz3Ascendente(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			for (int j = 0; j <= i && j <(N-i); j++){
-				printf("%d ", arr[i][j]);
+			for (int j = 0; j < N; j++ ){
+				if(i+j >= N-1 && j-i >= 0){
+					printf("%d ", arr[i][j]);
+				}
 			} 
 			printf("\n");
 		}
 		printf("\n");
 	}
 	
-	//Ejercicio 10 (1)
-	void recorrerMatriz1Descendente((int arr[][N]) {
+	//Ejercicio 14 (3)
+	void recorrerMatriz3Descendente(int arr[][N]) {
 		for(int i = N-1; i >= 0; i--) {
-			for (int j = 0; j <= i && j <= (N-1-i); j++){
-				printf("%d ", arr[i][j]);
+			for (int j = 0; j < N; j++ ){
+				if(i+j >= N-1 && j-i >= 0){
+					printf("%d ", arr[i][j]);
+				}
 			} 
 			printf("\n");
 		}

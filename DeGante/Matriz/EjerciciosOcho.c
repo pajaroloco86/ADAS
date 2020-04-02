@@ -1,5 +1,5 @@
 //Diego De Gante Pérez
-//Imprime diagonales principales e invertidas
+//Imprime sectore 4 ascedente y descendente
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,8 +7,8 @@
 
 void asignarArreglo(int arr[][N]);
 void imprimirArreglo(int arr[][N]);
-void recorrerDiagonalPrincipal(int arr[][N]);
-void recorrerDiagonalInvertida(int arr[][N]);
+void recorrerMatriz4Ascendente(int arr[][N]);
+void recorrerMatriz4Descendente(int arr[][N]);
 
 
 int main (){
@@ -21,8 +21,8 @@ int main (){
 	
 	asignarArreglo(arreglo);
 	imprimirArreglo(arreglo);
-	recorrerDiagonalPrincipal(arreglo);
-	recorrerDiagonalInvertida(arreglo);
+	recorrerMatriz4Ascendente(arreglo);
+	recorrerMatriz4Descendente(arreglo);
 	
 	
 	return 0;
@@ -48,22 +48,24 @@ int main (){
 		printf("\n");
 	}
 
-    //Ejercicio 17
-	void recorrerDiagonalPrincipal((int arr[][N]) {
+    //Ejercicio 15 (4)
+	void recorrerMatriz4Ascendente(int arr[][N]) {
 		for(int i = 0; i < N; i++) {
-			printf("%d ", arr[i][i]);
+			for (int j = (N-1-i); j <= i; j++){
+					printf("%d ", arr[i][j]);
+			} 
+			printf("\n");
 		}
 		printf("\n");
 	}
-
-	//Ejercicio 18
-	void recorrerDiagonalInvertida(int arr[][N]) {
-		for(int i = 0; i < N; i++) {
-			for (int j= 0; j < N; j++){
-				if(i+j== N-1){
+	
+	//Ejercicio 16 (4)
+	void recorrerMatriz4Descendente(int arr[][N]) {
+		for(int i = N-1; i >= 0; i--) {
+			for (int j = (N-1-i); j <= i; j++){
 					printf("%d ", arr[i][j]);
-				}
-			}
+			} 
+			printf("\n");
 		}
 		printf("\n");
 	}
