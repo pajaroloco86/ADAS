@@ -35,8 +35,6 @@ void imprimirArreglo(int arre[][N]){
     for(int j=0; j<N; j++){
         if(i+j >= (N-1)) {
               printf("%d,%d:%d ",i,j, arre[i][j]);
-            }else{
-              printf("     ");
             }
         }
         printf("\n");
