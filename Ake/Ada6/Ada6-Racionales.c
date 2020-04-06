@@ -14,6 +14,7 @@ struct racionales sumarRacionales(struct racionales racio1, struct racionales ra
 struct racionales restarRacionales(struct racionales racio1, struct racionales racio2);
 struct racionales multiplarRacionales(struct racionales racio1, struct racionales racio2);
 struct racionales dividirRacionales(struct racionales racio1, struct racionales racio2);
+struct racionales simplificarRacional(struct racionales racio1);
 
 
 int main()
@@ -25,7 +26,7 @@ int main()
     r1 = leerRacional();
     r2 = leerRacional();
 
-    imprimirResultado(sumarRacionales(r1, r2));
+    imprimirResultado(simplificarracional(sumarRacionales(r1, r2)));
     imprimirResultado(restarRacionales(r1, r2));
     imprimirResultado(multiplarRacionales(r1, r2));
     imprimirResultado(dividirRacionales(r1, r2));
@@ -90,3 +91,21 @@ struct racionales dividirRacionales(struct racionales racio1, struct racionales 
     return resultado;
 }
 
+
+
+struct racionales simplificarRacional(struct racionales racio1){
+    int n1= racio1.numerador;
+    int n2= racio1.denominador;
+    while(n1!=n2){
+		if (n1>n2)
+		n1 -= n2;
+		else
+		n2 -= n1;
+	}
+	int mcd=n1;
+
+    racio1.numerador = racio1.numerador/mcd;
+    racio1.denominador = racio1.denominador/mcd;
+
+    return racio1;
+}
