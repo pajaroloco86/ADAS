@@ -16,7 +16,7 @@ typedef struct nodo{
 
 //Prototipos
 node *agregar(node *lista);
-node *borrarUltimo(node *lista);
+void *recorrerNodo(node *lista);
 node *borrarEspecifico(node *lista, int numeroNodo);
 void imprimirNodos(node *lista);
 
@@ -30,7 +30,7 @@ int main(){
     while(opcion ==1){
         printf("Ingrese 1 para agregar un nodo \n");
         printf("Ingrese 2 para imprimir todos los nodos \n");
-        printf("Ingrese 3 para eliminar el ultimo nodo  \n");
+        printf("Ingrese 3 para recorrer los nodos  \n");
         printf("Ingrese 4 para eliminar un nodo especifico \n");
         printf("Ingrese otro numero para terminar \n");
         scanf("%d", &opcion);
@@ -43,12 +43,7 @@ int main(){
                 opcion =1;
                 break;
             case 3: 
-                printf("Nodos antes de borrar\n");
-                imprimirNodos(lista);
-                borrarUltimo(lista);
-                printf("Nodos despues de borrar\n");
-                imprimirNodos(lista);
-                opcion =1;
+                recorrerNodo(lista);
                 break;
             case 4:
                 printf("Ingrese el nodo numero de nodo a borrar\n");
@@ -64,9 +59,6 @@ int main(){
                 break;
         }
     }
-    imprimirNodos(lista);
-    borrarUltimo(lista);
-    imprimirNodos(lista);
 
     return 0;
 }
@@ -81,7 +73,7 @@ node *agregar(node *lista){
     printf("Ingrese el nombre de la medicina\n");
     scanf("%s", &medicina);
     strcpy(nuevoNodo->datos.medicina, medicina);
-    printf("Ingrese la hora de forma: 01:00\n");
+    printf("Ingrese la hora de forma: 00:00\n");
     scanf("%s", &tiempo);
     strcpy(nuevoNodo ->datos.hora, tiempo);
     nuevoNodo->sig = NULL; //El ultimo nodo no puede apuntar a otro nodo
@@ -108,22 +100,20 @@ node *agregar(node *lista){
 
     return lista;
 }
-node *borrarUltimo(node *lista){
-    node *temporal;
-    temporal = lista;
-    //Con el condicional verificamos que exista mas de 1 nodo
-    if(temporal->sig != NULL){
-            //Nos posicionamos en el penultimo nodo
-        //Con la condicion del while verificamos que nos encontramos en el penultimo nodo
-        while ( (temporal->sig)->sig != NULL){
-            temporal = temporal->sig;
+void *recorrerNodo(node *lista){
+    int respuesta =1;
+    while(respuesta = 1){
+        if(lista != NULL){
+                    printf("Nodo: %d  Medicina: %s Hora: %s \n ingrese 1 para continuar con el siguiente elementos \n", lista->numNodo, lista->datos.medicina,  lista->datos.hora);
+        //Nos pasamos a la direccion del siguiente nodo
+        lista = lista->sig;
+        scanf("%d", &respuesta);
+        }else{
+            printf("No hay mas nodos para mostrar\n");
         }
-        //Liberamos la memoria del ultimo nodo
-        free(temporal->sig);
-        temporal->sig = NULL;
-    }else{
-        lista = NULL;
+
     }
+
     return lista;
 }
 
